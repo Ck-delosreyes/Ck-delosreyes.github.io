@@ -1,26 +1,174 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="x=icon" href="img/Image (2).jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Firstportfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  </head>
-  <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="#about" class="nav-item">About</a>
-            <a href="Project.index.html" class="nav-item">Projects</a>
-        </div>
-    </nav>
-    <div class="content">
-       <img src="img/Image.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>Hello, I'm Christelle Keith!</h1>
-        <p>Welcome to my personal website</p>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="../img/Image (2).jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  
+  <script>
+    function filterGallery(category) {
+      var filterItems = document.getElementsByClassName('filter-item');
+      var buttons = document.getElementsByClassName('filter-btn');
+    
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('btn-dark');
+        buttons[i].classList.add('btn-outline-dark');
+      }
+
+      var activeButton = document.getElementById(category + "-btn");
+      if (activeButton) {
+        activeButton.classList.remove('btn-outline-dark');
+        activeButton.classList.add('btn-dark');
+      }
+      
+      for (var i = 0; i < filterItems.length; i++) {
+        if (category === 'all' || filterItems[i].classList.contains(category)) {
+          filterItems[i].classList.add('show');
+        } else {
+          filterItems[i].classList.remove('show');
+        }
+      }
+    }
+
+    function toggleDetails() {
+  var detailsSection = document.getElementById('detailsSection');
+  var footerShowBtn = document.getElementById('footerShowBtn');
+
+  
+  if (localStorage.getItem('detailsSectionState') === 'shown') {
+    detailsSection.style.display = 'block';
+    footerShowBtn.textContent = 'Collapse';
+  } else {
+    detailsSection.style.display = 'none';
+    footerShowBtn.textContent = 'Expand';
+  }
+
+  if (detailsSection.style.display === 'none' || detailsSection.style.display === '') {
+    detailsSection.style.display = 'block';
+    footerShowBtn.textContent = 'Collapse';
+    localStorage.setItem('detailsSectionState', 'shown');
+  } else {
+    detailsSection.style.display = 'none';
+    footerShowBtn.textContent = 'Expand';
+    localStorage.setItem('detailsSectionState', 'hidden');
+  }
+}
+
+    function addHoverEffect() {
+      var galleryItems = document.querySelectorAll('.filter-item');
+
+      galleryItems.forEach(function(item) {
+        item.addEventListener('mouseover', function() {
+          this.style.transform = 'scale(1.05)';
+          this.style.transition = 'transform 0.3s ease';
+        });
+
+        item.addEventListener('mouseout', function() {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var titles = [
+        "12/03/2025", "18/03/2025", "2/02/2025", "12/03/2025", "26/02/2025", "25/11/2024", "11/07/2024", "12/03/2025", "7/08/2023", 
+        "28/01/2025", "30/05/2024", "2/02/2025", "10/10/2024", "16/08/2024", "15/02/2025", "27/04/2025", "12/25/2024", "27/05/2023",  "03/26/2024", 
+        "11/24/2023", "7/03/2025", "25/08/2024", "27/03/2024", "25/01/2025",  "18/03/2025", "16/05/2024", "21/08/2024", "24/02/2025", "30/09/2024", 
+        "20/10/2024", "21/05/2009", "29/12/2024", "10/01/2025"
+      ];
+
+      var pictures = [
+        "f1.jpg", "Dog1.jpg", "F11.jpg", "S1.jpg", "F12.jpg", "Dog2.jpg", "S2.jpg", "F2.jpg", "Dog3.jpg", 
+        "Bf3.jpg", "S3.jpg", "F3.jpg", "S4.jpg", "Bf4.jpg", "Dog4.jpg", "F13.jpg", "F4.jpg", "S5.jpg", "F14.jpg", 
+        "F5.jpg", "Dog6.jpg", "S6.jpg", "Bf7.jpg", "F6.jpg",  "Dog7.jpg", "F7.jpg", "Bf8.jpg", "Dog8.jpg", "F8.jpg", 
+        "Bf9.jpg", "F9.jpg", "F10.jpg", "Bf10.jpg"
+      ];
+
+      var categories = [
+        "Family", "Animal", "Friends", "Sunset", "Friends", "Animal", "Sunset", "Family", "Dog", 
+        "Friends", "Sunset", "Family", "Sunset", "Friends", "Animal", "Friends", "Family", "Sunset", "Friends", 
+        "Family", "Animal", "Sunset", "Friends", "Family",  "Animal", "Family", "Friends", "Animal", "Family", 
+        "Friends", "Family", "Family", "Friends"
+      ];
+
+      var galleryRow = document.getElementById('gallery');
+
+      for (var i = 0; i < titles.length; i++) {
+  galleryRow.innerHTML +=
+    '<div class="col-6 col-md-3 mb-4 filter-item ' + categories[i] + ' show">' +
+      '<div class="card shadow rounded-4 overflow-hidden">' +
+        '<img src="../img/' + pictures[i] + '" class="gallery-img" alt="">' +
+        '<div class="card-body text-center">' +
+          '<h5 class="card-title">' + titles[i] + '</h5>' +
+          '<p class="card-text">' + categories[i] + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+      addHoverEffect();
+
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      const toggleButton = document.getElementById('toggle-mode');
+      toggleButton.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+          toggleButton.textContent = '☀️';
+        } else {
+          toggleButton.textContent = '🌙';
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="light-mode">
+
+  <div class="top-bar">
+    <a href="../Project.index.html" class="back home">
+      <h2>Back</h2>
+    </a>
+    <button id="toggle-mode" class="toggle-icon" data-bs-toggle="tooltip" title="Switch Theme">🌙</button>
+  </div>
+
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4" style="color: white;">Photo's</h2>
+
+      <div class="mb-5">
+        <button class="btn btn-dark filter-btn" id="all-btn" onclick="filterGallery('all')">All</button>
+        <button class="btn btn-outline-dark filter-btn" id="Family-btn" onclick="filterGallery('Family')">Family</button>
+        <button class="btn btn-outline-dark filter-btn" id="Friends-btn" onclick="filterGallery('Friends')">Friends</button>
+        <button class="btn btn-outline-dark filter-btn" id="Animal-btn" onclick="filterGallery('Animal')">Animal</button>
+        <button class="btn btn-outline-dark filter-btn" id="Sunset-btn" onclick="filterGallery('Sunset')">Sunset</button>
+      </div>
+
+      <div class="row g-3 mt-4" id="gallery"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-  </body>
+  </section>
+
+  <footer class="bg-dark text-white mt-5 py-4">
+    <div class="container text-center">
+      <h5 class="mb-3">Captured Memories 📸</h5>
+      <p id="detailsSection" style="display: none; transition: all 0.5s ease;">
+        These pictures are pieces of my soul, each one a quiet memory of holding loved ones close, 
+        feeling the pure love of pets, sharing unspoken moments with friends, 
+        and watching sunsets that whispered peace to my heart.
+      </p>
+      <button class="btn btn-outline-light mt-3" id="footerShowBtn" onclick="toggleDetails()"></button>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
