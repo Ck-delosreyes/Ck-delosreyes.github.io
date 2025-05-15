@@ -1,17 +1,3 @@
-
-body.light-mode {
-  background: linear-gradient(to right, #2c3e50, #bdc3c7);
-  color: #000;
-  transition: all 0.5s ease;
-}
-
-
-body.dark-mode {
-  background-color: #121212;
-  color: #fff;
-  transition: all 0.5s ease;
-}
-
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -23,17 +9,6 @@ body.dark-mode {
   z-index: 1000;
 }
 
-
-.back.home h2 {
-  font-size: 1rem;
-  margin: 0;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.5rem 1rem;
-  border-radius: 12px;
-}
-
-
 .toggle-icon {
   font-size: 30px;
   background: none;
@@ -41,9 +16,10 @@ body.dark-mode {
   cursor: pointer;
   color: inherit;
 }
+
 .gallery-img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
   object-position: center center;
   border-radius: 10px 10px 0 0;
@@ -58,7 +34,6 @@ body.dark-mode {
   display: block;
 }
 
-
 .filter-btn {
   padding: 12px 25px;
   font-size: 1rem;
@@ -66,19 +41,20 @@ body.dark-mode {
   text-transform: uppercase;
   font-weight: 600;
   transition: all 0.3s ease;
+  background-color: transparent;
+  color: inherit;
 }
 
 .filter-btn.btn-dark {
-  background-color: #4e5d6c;
-  color: #f0f0f0;
+  
+  color: #ffffff;
   border: none;
 }
 
-
 .filter-btn.btn-outline-dark {
-  background-color: transparent;
-  color: #f0f0f0;
   border: 2px solid #4e5d6c;
+  color: #4e5d6c;
+  
 }
 
 .filter-btn:hover,
@@ -86,10 +62,9 @@ body.dark-mode {
 .filter-btn.btn-outline-dark:hover {
   transform: scale(1.05);
   background-color: #90a4ae;
-  color: #f0f0f0;
+  color: #ffffff;
   border-color: #90a4ae;
 }
-
 
 footer {
   background: linear-gradient(to right, #141E30, #243B55);
