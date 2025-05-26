@@ -10,105 +10,121 @@
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: linear-gradient(to right, #2c3e50, #bdc3c7);
-        font-family: Arial, sans-serif;
-        margin: 0;
-    }
+     body {
+            background: linear-gradient(to bottom right, #1e1e2f, #2b2b3c);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
-    .card {
-        margin: 15px;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
+        .back.home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #ffffffc2;
+            z-index: 1000;
+        }
 
-    .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
+        .back.home h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            transition: color 0.3s;
+        }
 
-    .card-title {
-        color: #34495e;
-        font-weight: bold;
-    }
+        .back.home h2:hover {
+            color: #bdbab2;
+        }
 
-    .card-subtitle {
-        color: #7f8c8d;
-    }
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 80px;
+        }
 
-    .card-link {
-        color: #2980b9;
-        text-decoration: none;
-    }
+        .card {
+            background-color: #2f2f41;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 280px;
+        }
 
-    .card-link:hover {
-        text-decoration: underline;
-    }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+        }
 
-    .back.home {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        text-decoration: none;
-        color: #000000c2;
-        z-index: 1000;
-    }
+        .card img {
+            height: 180px;
+            object-fit: cover;
+        }
 
-    .back.home h2 {
-        font-size: 1rem;
-        font-weight: 600;
-        text-align: center;
-        transition: color 0.3s;
-    }
+        .card-title {
+            color: #f9f9f9;
+            font-size: 1.2rem;
+        }
 
+        .card-link {
+            color: #90caf9;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-    .back.home h2:hover {
-        color: #bdbab2;
-    }
-</style>
+        .card-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
 
 <body>
     <a href="index.html" class="back home">
         <h2>Home</h2>
     </a>
-    <div class="d-flex flex-wrap justify-content-center">
-        <div class="card" style="width: 15rem;">
-            <img src="img/slider8.jpg" alt="" class="card-image" height="250">
+
+    <div class="project-container">
+        <div class="card">
+            <img src="img/slider8.jpg" class="card-img-top" alt="A04">
             <div class="card-body">
-                <h5 class="card-title">Activity 4</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                <p class="card-text"></p>
+                <h5 class="card-title">A04</h5>
                 <a href="A04/index.html" class="card-link">View</a>
             </div>
         </div>
-        <div class="card" style="width: 15rem;">
-            <img src="img/BG1.jpg" alt="" class="card-image" height="250">
+
+        <div class="card">
+            <img src="img/BG1.jpg" class="card-img-top" alt="A05">
             <div class="card-body">
-                <h5 class="card-title">Activity 5</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                <p class="card-text"> </p>
+                <h5 class="card-title">A05</h5>
                 <a href="A05/index.html" class="card-link">View</a>
             </div>
         </div>
-        <div class="card" style="width: 15rem;">
-            <img src="img/A06PIC.jpg" alt="" class="card-image" height="250">
+
+        <div class="card">
+            <img src="img/A06PIC.jpg" class="card-img-top" alt="A06">
             <div class="card-body">
-                <h5 class="card-title">Activity 6</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                <p class="card-text"></p>
+                <h5 class="card-title">A06</h5>
                 <a href="A06/index.html" class="card-link">View</a>
             </div>
         </div>
-        <div class="card" style="width: 15rem;">
-            <img src="img/Harry Potter Bg.jpg" alt="" class="card-image" height="250">
+
+        <div class="card">
+            <img src="img/Harry Potter Bg.jpg" class="card-img-top" alt="A07">
             <div class="card-body">
-                <h5 class="card-title">Activity 7</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
-                <p class="card-text"></p>
+                <h5 class="card-title">A07</h5>
                 <a href="A07/index.html" class="card-link">View</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/itallends.jpg" card="-img-top" alt="A08">
+            <div class="card-body">
+                <h5 class="card-title">A08</h5>
+                <a href="A08/" class="card-link">View</a>
             </div>
         </div>
     </div>

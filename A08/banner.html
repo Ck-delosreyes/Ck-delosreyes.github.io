@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="parallax.css" />
+  <title>Banner</title>
+</head>
+
+<body>
+  <section>
+    <div class="keyart" id="parallax">
+      <div class="keyart_layer parallax" id="keyart-0" data-speed="2"></div>
+      <div class="keyart_layer parallax" id="keyart-1" data-speed="5"></div>
+      <div class="keyart_layer parallax" id="keyart-2" data-speed="20"></div>
+      <div class="keyart_layer parallax" id="keyart-3" data-speed="25"></div>
+      <div class="keyart_layer parallax" id="keyart-4" data-speed="30"></div>
+      <div class="keyart_layer parallax" id="keyart-5" data-speed="35"></div>
+      <div class="keyart_layer parallax" id="keyart-6" data-speed="40"></div>
+      <div class="keyart_layer parallax" id="keyart-7" data-speed="69"></div>
+      <!--Front image, in sync with scroll, no need to parallax-->
+      <!--Add or Remove layers as needed - check Parallax.css for refrence-->
+    </div>
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #000000 0%, #0a1a26 80%);
+        color: #fdfdfd;
+        margin: 0;
+        padding: 0;
+      }
+
+      h4 {
+        font-weight: 900;
+        margin-top: 0;
+        font-size: 1.8rem;
+        text-shadow: 0 0 8px #609abd;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 80px 40px;
+        background-color: rgba(0, 0, 0, 0.85);
+        border-radius: 16px;
+        box-shadow: 0 0 30px #4998dd;
+      }
+
+      /* Row and Column Structure */
+      .row {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 0 15px #1e2c42;
+      }
+
+      .col-img {
+        flex-shrink: 0;
+      }
+
+      .col-text {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #cbd5e1;
+      }
+
+      .col-text p {
+        margin-top: 0.8rem;
+      }
+
+      /* Image Styling */
+      .movie-img {
+        height: 240px;
+        width: 160px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 3px solid #809f9b;
+        box-shadow: 0 0 20px #0b4645;
+      }
+
+      /* Button/Link Styling */
+      .col-text a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 10px 18px;
+        background-color: #232222;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 0 10px #97a1ab;
+      }
+
+      .back-container {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .Back {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #97a1ab;
+        transition: background-color 0.3s ease;
+      }
+
+      .Back h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .Back:hover {
+        background-color: #555;
+      }
+    </style>
+    </head>
+
+    <body>
+      <a href="../Project.index.html" class="Back">
+        <h2>Back</h2>
+      </a>
+
+      <section class="main-content">
+        <div style="height: auto; background-color: rgb(23, 25, 25); padding: 40px;">
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry Potter and the death hallows part1.jpg" alt="" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Deathly Hallows Part 1</h4>
+              <p><strong>Released:</strong> November 19, 2010</p>
+              <p>Harry, Ron, and Hermione go on the run to destroy Voldemort's Horcruxes,<br> risking everything as the
+                wizarding world falls into darkness.</p>
+              <a href="https://youtu.be/LWEc_rwF4KA?si=q2keDEmqsquzpAx_" target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry Potter and the death hallows part2.jpg" alt="" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Deathly Hallows Part 2</h4>
+              <p><strong>Released:</strong> July 15, 2011</p>
+              <p>In the final chapter of the Harry Potter saga, the wizarding world faces its greatest battle.
+                <br>Harry, Ron,and Hermione return to Hogwarts for an epic showdown against Voldemort and his army.<br>
+                The fate of
+                magic is at stake.
+              </p>
+              <a href="https://www.youtube.com/watch?v=mObK5XD8udk" target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry Potter and the order of the phoenix copy.jpg"
+                alt="Harry Potter and the Order of the Phoenix Poster" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Order of the Phoenix</h4>
+              <p><strong>Released:</strong> July 11, 2007</p>
+              <p>Harry returns to Hogwarts to face increasing threats from Voldemort and a <br> Ministry of Magic that
+                refuses to believe his warnings.<br>Together with friends, he forms "Dumbledore's Army" to prepare for
+                the
+                looming battle.</p>
+              <a href="https://www.youtube.com/watch?v=lAxgztbYDbs" target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry potter and the half blood prince.jpg" alt="" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Half-Blood Prince</h4>
+              <p><strong>Released:</strong> July 15, 2009</p>
+              <p>Harry discovers a mysterious book belonging to the "Half-Blood Prince"<br> while Voldemort's power
+                grows
+                stronger and dark secrets come to light.</p>
+              <a href="https://www.youtube.com/watch?v=Z9AYPxH5NTM" target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry Potter and the goblet of fire.jpg" alt="" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Goblet of Fire</h4>
+              <p><strong>Released:</strong> November 18, 2005</p>
+              <p>Harry is unexpectedly entered into the dangerous Triwizard Tournament,<br>facing magical challenges and
+                darker forces returning to the wizarding world.</p>
+              <a href="https://www.youtube.com/watch?v=3EGojp4Hh6I&pp=ygUraGFycnkgcG90dGVyIGFuZCB0aGUgZ29ibGV0IG9mIGZpcmUgdHJhaWxlcg%3D%3D"
+                target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-img">
+              <img src="Harry potter and the Prisoner of Azkaban.jpg" alt="" class="movie-img" />
+            </div>
+            <div class="col-text">
+              <h4>Harry Potter and the Prisoner of Azkaban</h4>
+              <p><strong>Released:</strong> June 4, 2004</p>
+              <p>Harry learns that dangerous prisoner Sirius Black has escaped Azkaban and may be coming after him, <br>
+                as
+                secrets about his past unfold.</p>
+              <a href="https://www.youtube.com/watch?v=lAxgztbYDbs" target="_blank">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="back-container">
+            <a href="../Project.index.html" class="Back">
+              <h2>Back</h2>
+            </a>
+          </div>
+
+        </div>
+      </section>
+    </body>
+
+    <!--Uses JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/parallax.js"></script>
+
+</body>
+
+</html>
